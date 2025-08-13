@@ -1,3 +1,5 @@
+package com.ledgerlite;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ import com.opencsv.CSVReader;
 
 // Main Class
 
-public class LedgerLite {
+public class LedgerLiteApplication {
   public static void main(String[] args) {
     Ledger l = new Ledger();
     l.loadFile();
