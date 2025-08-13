@@ -46,16 +46,13 @@ More info once finished. For now its a gradle project so download then:
 
 ## **Usage**
 
-## **API Endpoints** *(Planned)*
+## **API Endpoints** *(Current Stuff)*
 
 | Method | Endpoint         | Description                  |
 | ------ | ---------------- | ---------------------------- |
-| POST   | `/auth/register` | Register a new user          |
-| POST   | `/auth/login`    | Authenticate and receive JWT |
-| GET    | `/transactions`  | Fetch all transactions       |
-| POST   | `/income`        | Add new income entry         |
-| POST   | `/expense`       | Add new expense entry        |
-| GET    | `/budget`        | Retrieve current budgets     |
+| POST   | `/api/entries`   | Add a new transaction        |
+| GET    | `/api/entries`   | Fetch all transactions       |
+| GET   | `/api/health`     | Check api health             |
 
 ---
 
