@@ -28,7 +28,8 @@ It will serve as a backend foundation for CLI tools, web applications, and poten
 
 ## **Tech Stack**
 
-* **Language:** Java* **Build Tool:** Gradle
+* **Language:** Java*
+* **Build Tool:** Gradle
 * **Libraries:**
 
   * OpenCSV (current CSV read/write)
