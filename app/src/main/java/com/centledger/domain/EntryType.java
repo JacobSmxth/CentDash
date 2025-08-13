@@ -1,4 +1,4 @@
-package com.ledgerlite.domain;
+package com.centledger.domain;
 
 public enum EntryType {
   INCOME,

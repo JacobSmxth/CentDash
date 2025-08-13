@@ -1,12 +1,18 @@
 # Changelog
 
 ## [Unreleased]
-- Turn LedgerLite into a REST API using Javalin or Spring Boot
+- Turn CentLedger into a REST API using Javalin or Spring Boot
 - Add editing and deleting of entries
 - Show totals and simple financial overviews
 - Filter transactions by date range
 - Create API endpoints for creating, reading, updating, and deleting entries
 - Support other storage formats like SQLite, JSON, or a full database
+
+## [0.3.1] - Project Rename
+- Renamed project from LedgerLite to CentLedger
+- Updated all package names from `com.ledgerlite` to `com.centledger`
+- Renamed main application class from `LedgerLiteApplication` to `CentLedgerApplication`
+- Updated build configuration and project files
 
 ## [0.1.0] - Early Build
 
@@ -31,8 +37,23 @@
 - Updated `Income` and `Expense` constructors to automatically set their `EntryType`
 - Adjusted CSV logic to read and write using the enum instead of raw strings
 
+### Day 4
+- Complete restructure to prepare for Spring Boot integration
+- Broke apart the monolithic `LedgerLiteApplication.java` into proper service and controller layers
+- Created `LedgerService` class to handle all business logic and CSV operations
+- Built `LedgerController` with REST endpoints (`/api/health`, `/api/entries`)
+- Moved domain classes (`Entry`, `Income`, `Expense`, `EntryType`) into their own package
+- Added Spring Boot dependencies and annotations (`@Service`, `@RestController`, `@RequestMapping`)
+- Created `application.properties` for configuration (CSV path, server port)
+- Got the REST API working! Can now POST new entries and GET all entries via HTTP
+- Added proper HTTP status codes and request/response handling
+- Used Java records for clean request DTOs (`CreateEntry`)
+
 ## Current Status
-- Prototype works: adds sample entries, lists them in the console, saves them to CSV, and reloads them on startup
-- Still no user input
-- Editing and deleting aren’t in yet
+- Working REST API! Can create and retrieve entries via HTTP endpoints
+- Spring Boot application with proper service/controller architecture
+- Persistent CSV storage that loads on startup and saves after each entry
+- Clean separation of concerns with domain models, service layer, and web layer
+- Still missing: editing/deleting entries, user authentication, database integration
 - No totals, summaries, or date filtering — yet
+- Ready for frontend integration or API testing with tools like Postman

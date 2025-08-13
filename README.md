@@ -1,4 +1,4 @@
-# LedgerLite - CLI Personal Finance Ledger
+# CentLedger - CLI Personal Finance Ledger
 
 *A lightweight, secure personal finance API written in Java*
 
@@ -11,7 +11,7 @@
 
 ## **About**
 
-LedgerLite is a **Java-based finance management API** designed for speed, security, and modularity.
+CentLedger is a **Java-based finance management API** designed for speed, security, and modularity.
 It will serve as a backend foundation for CLI tools, web applications, and potentially mobile apps. All interacting through a clean, hopefully well-documented REST interface.
 
 ---

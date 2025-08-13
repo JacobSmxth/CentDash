@@ -12,7 +12,7 @@ plugins {
     id 'eclipse'
 }
 
-group = 'com.ledgerlite'
+group = 'com.centledger'
 version = '0.3.0'
 
 repositories {

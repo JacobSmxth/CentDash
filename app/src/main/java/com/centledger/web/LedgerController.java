@@ -1,7 +1,7 @@
-package com.ledgerlite.web;
+package com.centledger.web;
 
-import com.ledgerlite.core.LedgerService;
-import com.ledgerlite.domain.Entry;
+import com.centledger.core.LedgerService;
+import com.centledger.domain.Entry;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

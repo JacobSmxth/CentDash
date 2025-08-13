@@ -1,9 +1,9 @@
-package com.ledgerlite.core;
+package com.centledger.core;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
 
-import com.ledgerlite.domain.*;
+import com.centledger.domain.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
