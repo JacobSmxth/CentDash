@@ -1,6 +1,6 @@
 package com.ledgerlite.domain;
 
-enum EntryType {
+public enum EntryType {
   INCOME,
   EXPENSE
 }
