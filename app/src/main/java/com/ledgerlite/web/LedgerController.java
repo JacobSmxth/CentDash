@@ -26,5 +26,20 @@ public class LedgerController {
     return ledger.list();
   }
 
+  record CreateEntry(String type, String desc, long cents) {}
+
+  @PostMapping("/entries")
+  @ResponseStatus(HttpStatus.CREATED)
+  public Entry create(@RequestBody CreateEntry req) {
+    String t = req.type() == null ? "" : req.type().toUpperCase();
+    if ("INCOME".equals(t)) {
+      return ledger.addIncome(LocalDateTime.now(), req.desc(), req.cents());
+    }
+    if ("EXPENSE".equals(t)) {
+      return ledger.addExpense(LocalDateTime.now(), req.desc(), req.cents());
+    }
+    throw new IllegalArgumentException("type must be INCOME or EXPENSE");
+  }
+
 
 }

@@ -1,6 +1,7 @@
 package com.ledgerlite.core;
 
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.ledgerlite.domain.*;
 import java.time.LocalDateTime;
@@ -17,8 +18,8 @@ public class LedgerService {
   private List<Entry> entries = new ArrayList<>();
   private final String csvPath;
 
-  public LedgerService(String csvPath) {
-    this.csvPath = "app/data.csv";
+  public LedgerService(@Value("${ledger.csv.path:app/data.csv}") String csvPath) {
+    this.csvPath = csvPath;
     loadFile();
   }
 
