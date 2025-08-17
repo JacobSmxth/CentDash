@@ -102,7 +102,7 @@ public class LedgerService {
           first = false;
           continue;
         }
-        if (row.length < 4) {
+        if (row.length < 5) {
           continue;
         }
 
