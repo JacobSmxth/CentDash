@@ -2,7 +2,6 @@ package com.centledger.web;
 
 import com.centledger.core.LedgerService;
 import com.centledger.domain.Entry;
-import com.centledger.domain.Budget;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,17 +18,12 @@ public class LedgerController {
 
   @GetMapping("/health")
   public String health() {
-    return "ok";
+    return "ledger ok";
   }
 
   @GetMapping("/entries")
-  public List<Entry> listEntries() {
-    return ledger.listEntries();
-  }
-
-  @GetMapping("/budgets")
-  public List<Budget> listBudgets() {
-    return ledger.listBudgets();
+  public List<Entry> list() {
+    return ledger.list();
   }
 
   record CreateEntry(String type, String desc, long cents) {}
@@ -47,14 +41,6 @@ public class LedgerController {
     throw new IllegalArgumentException("type must be INCOME or EXPENSE");
   }
 
-
-  record CreateBudget(String desc, long current, long max) {}
-
-  @PostMapping("/budgets")
-  @ResponseStatus(HttpStatus.CREATED)
-  public Budget create(@RequestBody CreateBudget req) {
-    return ledger.addBudget(String.format("%s", java.util.UUID.randomUUID()), req.desc(), req.current(), req.max(), LocalDateTime.now());
-  }
 
 
 }
