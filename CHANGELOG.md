@@ -1,12 +1,40 @@
 # Changelog
 
 ## [Unreleased]
-- Turn CentLedger into a REST API using Javalin or Spring Boot
-- Add editing and deleting of entries
+- Add editing and deleting of entries and budgets
 - Show totals and simple financial overviews
 - Filter transactions by date range
-- Create API endpoints for creating, reading, updating, and deleting entries
+- Create API endpoints for updating and deleting entries and budgets
 - Support other storage formats like SQLite, JSON, or a full database
+- Link expenses to automatically update budgets when created
+- Refine BudgetCategory enum and its use cases
+
+## [0.4.0] - Budget Management System - Day 9
+- Added comprehensive budget management system with full CRUD operations
+- Created `Budget` domain class with UUID identification, description, current/max amounts in cents, and last edit timestamps
+- Implemented `BudgetCategory` enum for NEEDS/WANTS categorization (foundation for future features)
+- Built `BudgetService` class with HashMap-based storage for improved lookup performance
+- Added CSV persistence for budgets using `budgets.csv` with proper headers and data validation
+- Created `BudgetController` with REST endpoints for budget management:
+  - `GET /api/budgets` - Retrieve all budgets as HashMap
+  - `POST /api/budgets` - Create new budget with auto-generated UUID
+- Separated budget logic from ledger logic into dedicated service and controller layers
+- Refactored `LedgerService` to remove budget-related code for cleaner architecture
+- Fixed small bugs related to budget creation and storage
+- Changed budget storage from list-based to HashMap for O(1) lookup performance
+- Used Java records for clean request DTOs (`CreateBudget`)
+
+### Day 8
+- No work
+
+### Day 7
+- No work
+
+### Day 6
+- No work
+
+### Day 5
+- No work
 
 ## [0.3.1] - Project Rename
 - Renamed project from LedgerLite to CentLedger
@@ -50,10 +78,11 @@
 - Used Java records for clean request DTOs (`CreateEntry`)
 
 ## Current Status
-- Working REST API! Can create and retrieve entries via HTTP endpoints
-- Spring Boot application with proper service/controller architecture
-- Persistent CSV storage that loads on startup and saves after each entry
-- Clean separation of concerns with domain models, service layer, and web layer
-- Still missing: editing/deleting entries, user authentication, database integration
-- No totals, summaries, or date filtering — yet
+- Working REST API with both ledger and budget management! Can create and retrieve entries and budgets via HTTP endpoints
+- Spring Boot application with proper service/controller architecture and separated business logic
+- Dual CSV persistence: `data.csv` for entries, `budgets.csv` for budgets - both load on startup and save after each operation
+- Clean separation of concerns with domain models, dedicated service layers, and web controllers
+- HashMap-based budget storage for O(1) lookup performance with UUID-based identification
+- Still missing: editing/deleting entries and budgets, user authentication, database integration
+- No automatic budget updates when expenses are added, no totals, summaries, or date filtering — yet
 - Ready for frontend integration or API testing with tools like Postman

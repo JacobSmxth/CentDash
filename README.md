@@ -52,7 +52,9 @@ More info once finished. For now its a gradle project so download then:
 | ------ | ---------------- | ---------------------------- |
 | POST   | `/api/entries`   | Add a new transaction        |
 | GET    | `/api/entries`   | Fetch all transactions       |
-| GET   | `/api/health`     | Check api health             |
+| POST   | `/api/budgets`   | Create a new budget          |
+| GET    | `/api/budgets`   | Fetch all budgets            |
+| GET    | `/api/health`    | Check api health             |
 
 ---
 
