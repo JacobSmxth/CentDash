@@ -15,7 +15,6 @@ import java.io.*;
 public class LedgerService {
 
   private List<Entry> entries = new ArrayList<>();
-  private List<Budget> budgets = new ArrayList<>();
 
   public LedgerService() {
     loadEntries();
@@ -52,7 +51,6 @@ public class LedgerService {
         w.writeNext(new String[] {type, entry.getDesc(), cents, time});
       }
 
-      System.out.println("CSV File written");
     } catch (IOException e) {
       e.printStackTrace();
     }

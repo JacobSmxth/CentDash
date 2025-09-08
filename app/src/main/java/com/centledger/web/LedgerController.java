@@ -1,9 +1,13 @@
 package com.centledger.web;
 
+import jakarta.validation.Valid;
+
 import com.centledger.core.LedgerService;
 import com.centledger.domain.Entry;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,19 +30,24 @@ public class LedgerController {
     return ledger.list();
   }
 
-  record CreateEntry(String type, String desc, long cents) {}
+  record CreateEntry(
+      @Pattern(regexp = "^(INCOME|EXPENSE)$", message = "Type must be INCOME or EXPENSE")
+      String type,
+      @NotBlank(message = "Description can't be blank")
+      @Size(min = 1, max = 255, message= "Description must be between 1 and 255 characters")
+      String desc,
+      @Min(value = 0, message ="Can't enter a negative value for cents")
+      long cents
+  ) {}
 
   @PostMapping("/entries")
   @ResponseStatus(HttpStatus.CREATED)
-  public Entry create(@RequestBody CreateEntry req) {
-    String t = req.type() == null ? "" : req.type().toUpperCase();
-    if ("INCOME".equals(t)) {
+  public Entry create(@Valid @RequestBody CreateEntry req) {
+    if ("INCOME".equals(req.type().toUpperCase())) {
       return ledger.addIncome(LocalDateTime.now(), req.desc(), req.cents());
-    }
-    if ("EXPENSE".equals(t)) {
+    } else {
       return ledger.addExpense(LocalDateTime.now(), req.desc(), req.cents());
     }
-    throw new IllegalArgumentException("type must be INCOME or EXPENSE");
   }
 
 

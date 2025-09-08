@@ -19,9 +19,8 @@ public class BudgetService {
   }
 
   public Budget addBudget(String id, String desc, long current, long maxCents, LocalDateTime lastEdit) {
-    String uuid = String.format("%s", java.util.UUID.randomUUID());
-    Budget budget = new Budget(uuid, desc, current, maxCents, lastEdit);
-    budgets.put(uuid, budget);
+    Budget budget = new Budget(id, desc, current, maxCents, lastEdit);
+    budgets.put(id, budget);
     writeBudgets();
     return budget;
   }
@@ -44,8 +43,6 @@ public class BudgetService {
 
         w.writeNext(new String[] {budget.getUUID(), budget.getDesc(), currentCents, maxCents, lastEdit});
       }
-
-      System.out.println("CSV File written");
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -70,7 +67,6 @@ public class BudgetService {
         long currentCents = Long.parseLong(row[2]);
         long maxCents = Long.parseLong(row[3]);
         LocalDateTime time = LocalDateTime.parse(row[4]);
-
         addBudget(id, desc, currentCents, maxCents, time);
        }
       System.out.println("CSV file loaded into memory");

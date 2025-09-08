@@ -1,6 +1,5 @@
 package com.centledger.domain;
 
-import java.time.LocalTime;
 import java.time.LocalDateTime;
 
 public class Budget {
