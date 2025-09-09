@@ -3,12 +3,14 @@ package com.centledger.domain;
 import java.time.LocalDateTime;
 
 public abstract class Entry { // Just found out abstract makes it more of a blueprint
+  private String id;
   private String desc;
   private long amountCents;
   private LocalDateTime time;
   private EntryType type;
 
-  public Entry (EntryType type, LocalDateTime time, String desc, long amountCents) {
+  public Entry (String id, EntryType type, LocalDateTime time, String desc, long amountCents) {
+    this.id = id;
     this.type =type;
     this.desc = desc;
     this.time = time;
@@ -21,6 +23,10 @@ public abstract class Entry { // Just found out abstract makes it more of a blue
 
   public String getDesc() {
     return desc;
+  }
+
+  public String getUUID() {
+    return id;
   }
 
   public LocalDateTime getTime() {

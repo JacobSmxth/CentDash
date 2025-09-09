@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 
 public class Expense extends Entry {
-  public Expense(LocalDateTime time, String desc, long amountCents) {
-    super(EntryType.EXPENSE, time, desc, amountCents);
+  public Expense(String id, LocalDateTime time, String desc, long amountCents) {
+    super(id, EntryType.EXPENSE, time, desc, amountCents);
   }
 
   public long addToTotal(long total) {

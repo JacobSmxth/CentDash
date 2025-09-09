@@ -8,6 +8,9 @@ import com.centledger.domain.Budget;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.http.ResponseEntity;
+import java.net.URI;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
@@ -38,9 +41,11 @@ public class BudgetController {
   }
 
   @PostMapping("/budgets")
-  @ResponseStatus(HttpStatus.CREATED)
-  public Budget create(@Valid @RequestBody CreateBudget req) {
-    return budget.addBudget(java.util.UUID.randomUUID().toString(), req.desc(), req.current(), req.max(), LocalDateTime.now());
+  public ResponseEntity<Budget> create(@Valid @RequestBody CreateBudget req) {
+    Budget newBudget = budget.addBudget(java.util.UUID.randomUUID().toString(), req.desc(), req.current(), req.max(), LocalDateTime.now());
+
+    return ResponseEntity.created(URI.create("/api/budgets/" + newBudget.getUUID()))
+      .body(newBudget);
   }
 
 }

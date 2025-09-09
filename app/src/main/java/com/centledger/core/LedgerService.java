@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.centledger.domain.*;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.HashMap;
 import com.opencsv.exceptions.CsvValidationException;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -14,41 +13,41 @@ import java.io.*;
 @Service
 public class LedgerService {
 
-  private List<Entry> entries = new ArrayList<>();
+  private HashMap<String, Entry> entries = new HashMap<>();
 
   public LedgerService() {
     loadEntries();
   }
 
-  public Entry addExpense(LocalDateTime t, String desc, long amountCents) {
-    Entry e = new Expense(t, desc, amountCents);
-    entries.add(e);
+  public Entry addExpense(String id, LocalDateTime t, String desc, long amountCents) {
+    Entry e = new Expense(id, t, desc, amountCents);
+    entries.put(id, e);
     writeEntries();
     return e;
   }
 
-  public Entry addIncome(LocalDateTime t, String desc, long amountCents) {
-    Entry e = new Income(t, desc, amountCents);
-    entries.add(e);
+  public Entry addIncome(String id, LocalDateTime t, String desc, long amountCents) {
+    Entry e = new Income(id, t, desc, amountCents);
+    entries.put(id, e);
     writeEntries();
     return e;
   }
 
-  public List<Entry> list() {
+  public HashMap<String, Entry> list() {
     return entries;
   }
 
   public void writeEntries() {
     String csv = "entries.csv";
     try (CSVWriter w = new CSVWriter(new FileWriter(csv))) {
-      w.writeNext(new String[] {"Type", "Desc", "Cents", "Time"});
+      w.writeNext(new String[] {"ID", "Type", "Desc", "Cents", "Time"});
 
-      for(Entry entry : entries) {
+      for(Entry entry : entries.values()) {
         String type = entry.getTypeEnum() == EntryType.INCOME ? "INCOME" : "EXPENSE";
         String cents = String.valueOf(entry.getCents());
         String time = entry.getTime().toString();
 
-        w.writeNext(new String[] {type, entry.getDesc(), cents, time});
+        w.writeNext(new String[] {entry.getUUID(), type, entry.getDesc(), cents, time});
       }
 
     } catch (IOException e) {
@@ -71,15 +70,16 @@ public class LedgerService {
           continue;
         }
 
-        String type = row[0];
-        String desc = row[1];
-        long cents = Long.parseLong(row[2]);
-        LocalDateTime time = LocalDateTime.parse(row[3]);
+        String uuid = row[0];
+        String type = row[1];
+        String desc = row[2];
+        long cents = Long.parseLong(row[3]);
+        LocalDateTime time = LocalDateTime.parse(row[4]);
 
         if ("INCOME".equals(type)) {
-          addIncome(time, desc, cents);
+          addIncome(uuid,time, desc, cents);
         } else if ("EXPENSE".equals(type)) {
-          addExpense(time, desc, cents);
+          addExpense(uuid, time, desc, cents);
         }
       }
       System.out.println("CSV file loaded into memory");

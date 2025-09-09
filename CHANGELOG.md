@@ -9,6 +9,14 @@
 - Link expenses to automatically update budgets when created
 - Refine BudgetCategory enum and its use cases
 
+## [0.5.0] - UUID-Based Entry Management - Day 10 - 2025-08-18
+- Refactored entries storage from List to HashMap with UUID keys for O(1) lookup performance
+- Added UUID field to Entry class and all subclasses (Income, Expense)
+- Updated CSV persistence format to include UUID in entries.csv
+- Improved REST API responses with proper HTTP 201 Created status and Location headers
+- Enhanced LedgerController and BudgetController to return ResponseEntity with created URIs
+- Updated constructors and methods to handle UUID generation and storage
+
 ## [0.4.0] - Budget Management System - Day 9
 - Added comprehensive budget management system with full CRUD operations
 - Created `Budget` domain class with UUID identification, description, current/max amounts in cents, and last edit timestamps

@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.HashMap;
+
+import java.net.URI;
+import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/api")
@@ -26,7 +29,7 @@ public class LedgerController {
   }
 
   @GetMapping("/entries")
-  public List<Entry> list() {
+  public HashMap<String, Entry> list() {
     return ledger.list();
   }
 
@@ -41,15 +44,17 @@ public class LedgerController {
   ) {}
 
   @PostMapping("/entries")
-  @ResponseStatus(HttpStatus.CREATED)
-  public Entry create(@Valid @RequestBody CreateEntry req) {
+  public ResponseEntity<Entry> create(@Valid @RequestBody CreateEntry req) {
+    String uuid = java.util.UUID.randomUUID().toString();
+    Entry newEntry;
     if ("INCOME".equals(req.type().toUpperCase())) {
-      return ledger.addIncome(LocalDateTime.now(), req.desc(), req.cents());
+      newEntry = ledger.addIncome(uuid, LocalDateTime.now(), req.desc(), req.cents());
     } else {
-      return ledger.addExpense(LocalDateTime.now(), req.desc(), req.cents());
+      newEntry = ledger.addExpense(uuid, LocalDateTime.now(), req.desc(), req.cents());
     }
+
+    return ResponseEntity.created(URI.create("/api/entries/" + newEntry.getUUID()))
+      .body(newEntry);
   }
-
-
 
 }
