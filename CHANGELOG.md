@@ -9,7 +9,7 @@
 - Link expenses to automatically update budgets when created
 - Refine BudgetCategory enum and its use cases
 
-## [0.5.0] - UUID-Based Entry Management - Day 10 - 2025-08-18
+## [0.5.0] - UUID-Based Entry Management - Day 10 - 2025-09-08
 - Refactored entries storage from List to HashMap with UUID keys for O(1) lookup performance
 - Added UUID field to Entry class and all subclasses (Income, Expense)
 - Updated CSV persistence format to include UUID in entries.csv

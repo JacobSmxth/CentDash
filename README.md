@@ -11,18 +11,26 @@
 
 ## **About**
 
-CentLedger is a **Java-based finance management API** designed for speed, security, and modularity.
-It will serve as a backend foundation for CLI tools, web applications, and potentially mobile apps. All interacting through a clean, hopefully well-documented REST interface.
+CentLedger is a **Java-based finance management API** with UUID-based transaction and budget management. Features include persistent CSV storage, RESTful endpoints with proper HTTP responses, and a modular architecture ready for CLI tools, web applications, and mobile apps.
 
 ---
 
+## **Current Features**
+
+* ✅ UUID-based transaction and budget management
+* ✅ Manage incomes, expenses, and budgets with HashMap storage
+* ✅ Persistent CSV storage with automatic UUID generation
+* ✅ REST API with proper HTTP status codes and location headers
+* ✅ Lightweight, scalable Java Spring Boot backend
+
 ## **Planned Features**
 
-*  Secure password hashing
-*  Manage incomes, expenses, and budgets
-*  Persistent storage (CSV now, database planned)
-*  Lightweight, scalable Java backend
-*  REST API-ready architecture for easy integration into web or mobile apps
+* 🔄 Secure user authentication and password hashing
+* 🔄 Database integration (SQLite/PostgreSQL)
+* 🔄 Transaction filtering and search capabilities
+* 🔄 Budget-expense linking and automatic updates
+* 🔄 Financial reporting and analytics
+* 🔄 API documentation with Swagger/OpenAPI
 
 ---
 
@@ -32,29 +40,63 @@ It will serve as a backend foundation for CLI tools, web applications, and poten
 * **Build Tool:** Gradle
 * **Libraries:**
 
-  * OpenCSV (current CSV read/write)
-  * Spring Boot (planned for REST endpoints)
+  * OpenCSV (CSV read/write with UUID support)
+  * Spring Boot (REST API with proper HTTP responses)
 
-* **Planned Database:** SQLite or PostgreSQL
+* **Storage:** CSV-based persistence (database integration planned)
+* **Architecture:** Service-Controller pattern with domain models
 
 ---
 
 ## **Installation**
 
-More info once finished. For now its a gradle project so download then:
-```./gradlew run```
+Clone the repository and run the application:
+
+```bash
+git clone <repository-url>
+cd CentLedger
+./gradlew :app:bootRun
+```
+
+The API will start on `http://localhost:8080` by default.
 
 ## **Usage**
 
-## **API Endpoints** *(Current Stuff)*
+### Adding Transactions
+```bash
+# Add an income
+curl -X POST http://localhost:8080/api/entries \
+  -H "Content-Type: application/json" \
+  -d '{"type": "INCOME", "desc": "Salary", "cents": 500000}'
 
-| Method | Endpoint         | Description                  |
-| ------ | ---------------- | ---------------------------- |
-| POST   | `/api/entries`   | Add a new transaction        |
-| GET    | `/api/entries`   | Fetch all transactions       |
-| POST   | `/api/budgets`   | Create a new budget          |
-| GET    | `/api/budgets`   | Fetch all budgets            |
-| GET    | `/api/health`    | Check api health             |
+# Add an expense
+curl -X POST http://localhost:8080/api/entries \
+  -H "Content-Type: application/json" \
+  -d '{"type": "EXPENSE", "desc": "Groceries", "cents": 7500}'
+```
+
+### Managing Budgets
+```bash
+# Create a budget
+curl -X POST http://localhost:8080/api/budgets \
+  -H "Content-Type: application/json" \
+  -d '{"desc": "Monthly Food Budget", "current": 0, "max": 50000}'
+
+# Get all budgets
+curl http://localhost:8080/api/budgets
+```
+
+## **API Endpoints**
+
+All endpoints return proper HTTP status codes and location headers for created resources. Entries and budgets are identified by UUIDs for reliable referencing.
+
+| Method | Endpoint         | Description                            | Response |
+| ------ | ---------------- | -------------------------------------- | -------- |
+| POST   | `/api/entries`   | Add a new transaction (income/expense) | 201 Created with Location header |
+| GET    | `/api/entries`   | Fetch all transactions as HashMap      | 200 OK |
+| POST   | `/api/budgets`   | Create a new budget                    | 201 Created with Location header |
+| GET    | `/api/budgets`   | Fetch all budgets as HashMap           | 200 OK |
+| GET    | `/api/health`    | Check API health                       | 200 OK |
 
 ---
 
