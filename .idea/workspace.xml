@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95917219-6fa4-4332-9b6c-7b998623064d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/CentLedgerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/core/BudgetService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/core/LedgerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Budget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/BudgetCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/EntryType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Expense.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Income.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/BudgetController$CreateBudget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/BudgetController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/LedgerController$CreateEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/LedgerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/CentLedgerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/core/BudgetService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/core/LedgerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Budget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/BudgetCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/EntryType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Expense.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Income.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/BudgetController$CreateBudget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/BudgetController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/LedgerController$CreateEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/LedgerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/CentLedgerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/core/BudgetService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/core/LedgerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Budget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/BudgetCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Entry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/EntryType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Expense.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Income.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/web/ApiErrorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/web/BudgetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/web/LedgerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="34FPIqZJ3QsEqzy9rZ5EutRB7YD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95917219-6fa4-4332-9b6c-7b998623064d" name="Changes" comment="" />
+      <created>1760806270451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760806270451</updated>
+    </task>
+    <servers />
+  </component>
+</project>
