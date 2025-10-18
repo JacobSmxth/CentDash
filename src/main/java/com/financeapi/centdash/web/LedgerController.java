@@ -1,5 +1,6 @@
 package com.financeapi.centdash.web;
 
+import com.financeapi.centdash.domain.Expense;
 import com.financeapi.centdash.domain.Income;
 import com.financeapi.centdash.repository.EntryRepository;
 import jakarta.validation.Valid;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 
@@ -34,11 +36,54 @@ public class LedgerController {
     @GetMapping
     public List<Entry> listAllEntries() {
         return entryRepository.findAll();
+
+    }
+    @GetMapping("/incomes")
+    public List<Income> listAllIncome() {
+        return entryRepository.findAllIncome();
     }
 
-    @PostMapping("/income")
+    @GetMapping("/expenses")
+    public List<Expense> listAllExpense() {
+        return entryRepository.findAllExpense();
+    }
+
+    @GetMapping("/net-total")
+    public ResponseEntity<HashMap<String, Object>> getNetTotal() {
+        HashMap<String, Object> information = new HashMap<>();
+
+
+        Long incomeTotal = entryRepository.findAllIncome().stream()
+                .mapToLong(Income::getCents)
+                .sum();
+        Long expenseTotal = entryRepository.findAllExpense().stream()
+                .mapToLong(Expense::getCents)
+                .sum();
+
+        Long netTotal = incomeTotal - expenseTotal;
+
+
+        long dollars = netTotal / 100;
+        long cents = Math.abs(netTotal % 100);
+        String formattedTotal = "$%d.%02d".formatted(dollars, cents);
+
+        information.put("incomeTotalCents", incomeTotal);
+        information.put("expenseTotalCents", expenseTotal);
+        information.put("netTotalCents", netTotal);
+        information.put("doubleTotalDollars", netTotal / 100.0);
+        information.put("formattedTotal", formattedTotal);
+
+        return ResponseEntity.ok(information);
+    }
+
+    @PostMapping("/incomes")
     public ResponseEntity<Entry> createIncome(@RequestBody Income income) {
         return ResponseEntity.ok(entryRepository.save(income));
+    }
+
+    @PostMapping("/expenses")
+    public ResponseEntity<Entry> createExpense(@RequestBody Expense expense) {
+        return ResponseEntity.ok(entryRepository.save(expense));
     }
 
 }

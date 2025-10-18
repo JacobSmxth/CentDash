@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95917219-6fa4-4332-9b6c-7b998623064d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/CentDashApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/CentDashApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Budget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/BudgetCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/BudgetCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Entry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/EntryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/EntryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Income.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Income.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/ApiErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/ApiErrorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/BudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/BudgetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/thedata.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/thedata.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/repository/EntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/repository/EntryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/LedgerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/LedgerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +19,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="centdash" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,6 +60,7 @@
   "keyToString": {
     "Gradle.CentDash [:com.centledger.CentLedgerApplication.main()].executor": "Run",
     "Gradle.CentDash [:com.financeapi.centdash.CentDashApplication.main()].executor": "Run",
+    "Gradle.CentDash [bootRun].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -60,6 +69,40 @@
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle bootRun" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="CentDash [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.CentDash [bootRun]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
