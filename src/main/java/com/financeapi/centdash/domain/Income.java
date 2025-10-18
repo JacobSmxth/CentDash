@@ -8,12 +8,16 @@ import java.time.LocalDateTime;
 @Entity
 @DiscriminatorValue("INCOME")
 public class Income extends Entry {
-  public Income(Long id, LocalDateTime time, String desc, Long amountCents) {
-    super(id, EntryType.INCOME, time, desc, amountCents);
-  }
 
-  public Long addToTotal(Long total) {
-    return total + getCents();
-  }
+    public Income() {
+    }
+
+    public Income(String desc, Long amountCents) {
+        super(desc, amountCents);
+    }
+
+    public Long addToTotal(Long total) {
+        return total + getCents();
+    }
 
 }

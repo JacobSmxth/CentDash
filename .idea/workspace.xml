@@ -5,62 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95917219-6fa4-4332-9b6c-7b998623064d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/CentLedgerApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/core/BudgetService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/core/LedgerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Budget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/BudgetCategory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Entry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/EntryType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Expense.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/domain/Income.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/BudgetController$CreateBudget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/BudgetController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/LedgerController$CreateEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/main/com/centledger/web/LedgerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/CentLedgerApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/core/BudgetService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/core/LedgerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Budget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/BudgetCategory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Entry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/EntryType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Expense.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/domain/Income.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/BudgetController$CreateBudget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/BudgetController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/LedgerController$CreateEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/java/com/centledger/web/LedgerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/CentLedgerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/core/BudgetService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/core/LedgerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Budget.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/BudgetCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Entry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/EntryType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Expense.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/domain/Income.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/web/ApiErrorHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/web/BudgetController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/centledger/web/LedgerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/CentDashApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/CentDashApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Budget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/BudgetCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/BudgetCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/EntryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/EntryType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Income.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/Income.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/ApiErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/ApiErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/BudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/BudgetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/LedgerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/LedgerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +29,20 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="34FPIqZJ3QsEqzy9rZ5EutRB7YD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -86,10 +50,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.CentDash [:com.centledger.CentLedgerApplication.main()].executor": "Run",
+    "Gradle.CentDash [:com.financeapi.centdash.CentDashApplication.main()].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
   <component name="SharedIndexes">

@@ -25,10 +25,9 @@ public class BudgetController {
     }
 
 
-
     @PostMapping
     public ResponseEntity<Budget> create(@RequestBody Budget budget) {
-       return ResponseEntity.status(HttpStatus.CREATED).body(budgetRepository.save(budget));
+        return ResponseEntity.status(HttpStatus.CREATED).body(budgetRepository.save(budget));
     }
 
 }

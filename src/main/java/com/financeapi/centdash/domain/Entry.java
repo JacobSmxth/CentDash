@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "entry_type")
 public abstract class Entry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,28 +16,24 @@ public abstract class Entry {
     private String desc;
 
     @NotNull(message = "Must have amount declared")
-    private Long amountCents;
+    private Long cents;
 
     private LocalDateTime time;
 
-    private EntryType type;
 
-    public Entry(EntryType type, LocalDateTime time, String desc, Long amountCents) {
-        this.type = type;
+    public Entry() {
+    }
+
+    public Entry(String desc, Long amountCents) {
         this.desc = desc;
-        this.amountCents = amountCents;
+        this.cents = amountCents;
     }
 
-    public EntryType getTypeEnum() {
-        return type;
-    }
-    public void setTypeEnum(EntryType type) {
-        this.type = type;
-    }
 
     public String getDesc() {
         return desc;
     }
+
     public void setDesc(String desc) {
         this.desc = desc;
     }
@@ -43,6 +41,7 @@ public abstract class Entry {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -55,26 +54,28 @@ public abstract class Entry {
     public LocalDateTime getTime() {
         return time;
     }
+
     public void setTime(LocalDateTime time) {
         this.time = time;
     }
 
     public Long getCents() {
-        return amountCents;
+        return cents;
     }
+
     public void setCents(Long cents) {
-        this.amountCents = cents;
+        this.cents = cents;
     }
 
     public abstract Long addToTotal(Long total);
 
     public String getAmount() {
-        long abs = Math.abs(amountCents);
-        return "$" + (amountCents / 100) + "." + (String.format("%02d", abs % 100));
+        long abs = Math.abs(cents);
+        return "$" + (cents / 100) + "." + (String.format("%02d", abs % 100));
     }
 
     public String getType() {
-        return type == EntryType.INCOME ? "INCOME" : "EXPENSE";
+        return this instanceof Income ? "INCOME" : "EXPENSE";
     }
 }
 

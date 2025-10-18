@@ -24,6 +24,9 @@ public class Budget {
 
     private LocalDateTime lastEdit;
 
+    public Budget() {
+    }
+
     public Budget(String desc, Long current, Long maxCents) {
         this.desc = desc;
         this.maxCents = maxCents;
@@ -34,6 +37,7 @@ public class Budget {
     public long getCurrent() {
         return currentCents;
     }
+
     public void setCurrent(long currentCents) {
         this.currentCents = currentCents;
     }
@@ -41,6 +45,7 @@ public class Budget {
     public long getMax() {
         return maxCents;
     }
+
     public void setMax(long maxCents) {
         this.maxCents = maxCents;
     }
@@ -48,6 +53,7 @@ public class Budget {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -55,6 +61,7 @@ public class Budget {
     public String getDesc() {
         return desc;
     }
+
     public void setDesc(String desc) {
         this.desc = desc;
     }
@@ -63,13 +70,16 @@ public class Budget {
     public void prePersist() {
         this.lastEdit = LocalDateTime.now();
     }
+
     @PreUpdate
     public void preUpdate() {
         this.lastEdit = LocalDateTime.now();
     }
+
     public LocalDateTime getLastEdit() {
         return lastEdit;
     }
+
     public void setLastEdit(LocalDateTime lastEdit) {
         this.lastEdit = lastEdit;
     }

@@ -1,5 +1,6 @@
 package com.financeapi.centdash.web;
 
+import com.financeapi.centdash.domain.Income;
 import com.financeapi.centdash.repository.EntryRepository;
 import jakarta.validation.Valid;
 
@@ -35,9 +36,9 @@ public class LedgerController {
         return entryRepository.findAll();
     }
 
-    @PostMapping
-    public ResponseEntity<Entry> create(@RequestBody Entry entry) {
-        return ResponseEntity.ok(entryRepository.save(entry));
+    @PostMapping("/income")
+    public ResponseEntity<Entry> createIncome(@RequestBody Income income) {
+        return ResponseEntity.ok(entryRepository.save(income));
     }
 
 }

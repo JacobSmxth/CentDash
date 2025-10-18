@@ -9,12 +9,13 @@ import java.time.LocalDateTime;
 @Entity
 @DiscriminatorValue("EXPENSE")
 public class Expense extends Entry {
-  public Expense(Long id, LocalDateTime time, String desc, Long amountCents) {
-    super(id, EntryType.EXPENSE, time, desc, amountCents);
-  }
+    public Expense() {}
+    public Expense(String desc, Long amountCents) {
+        super(desc, amountCents);
+    }
 
-  public Long addToTotal(Long total) {
-    return total - getCents();
-  }
+    public Long addToTotal(Long total) {
+        return total - getCents();
+    }
 
 }
