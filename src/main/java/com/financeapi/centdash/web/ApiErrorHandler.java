@@ -1,4 +1,4 @@
-package com.centledger.web;
+package com.financeapi.centdash.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

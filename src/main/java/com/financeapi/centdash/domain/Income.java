@@ -1,4 +1,4 @@
-package com.centledger.domain;
+package com.financeapi.centdash.domain;
 
 import java.time.LocalDateTime;
 

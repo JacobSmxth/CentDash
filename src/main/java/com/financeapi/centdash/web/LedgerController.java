@@ -1,9 +1,9 @@
-package com.centledger.web;
+package com.financeapi.centdash.web;
 
 import jakarta.validation.Valid;
 
-import com.centledger.core.LedgerService;
-import com.centledger.domain.Entry;
+import com.financeapi.centdash.core.LedgerService;
+import com.financeapi.centdash.domain.Entry;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

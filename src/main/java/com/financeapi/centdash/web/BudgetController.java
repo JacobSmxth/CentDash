@@ -1,10 +1,10 @@
-package com.centledger.web;
+package com.financeapi.centdash.web;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 
-import com.centledger.core.BudgetService;
-import com.centledger.domain.Budget;
+import com.financeapi.centdash.core.BudgetService;
+import com.financeapi.centdash.domain.Budget;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,9 +1,12 @@
-package com.centledger.domain;
+package com.financeapi.centdash.domain;
+
+import jakarta.persistence.Entity;
 
 import java.time.LocalDateTime;
 
+@Entity
 public abstract class Entry { // Just found out abstract makes it more of a blueprint
-  private String id;
+    private String id;
   private String desc;
   private long amountCents;
   private LocalDateTime time;
