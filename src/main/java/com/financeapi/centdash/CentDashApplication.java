@@ -1,4 +1,4 @@
-package com.centledger;
+package com.financeapi.centdash;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // Main Class
 
 @SpringBootApplication
-public class CentLedgerApplication {
+public class CentDashApplication {
   public static void main(String[] args) {
-    SpringApplication.run(CentLedgerApplication.class, args);
+    SpringApplication.run(CentDashApplication.class, args);
   }
 }
 

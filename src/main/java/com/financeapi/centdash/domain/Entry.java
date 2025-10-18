@@ -1,52 +1,80 @@
 package com.financeapi.centdash.domain;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
 @Entity
-public abstract class Entry { // Just found out abstract makes it more of a blueprint
-    private String id;
-  private String desc;
-  private long amountCents;
-  private LocalDateTime time;
-  private EntryType type;
+public abstract class Entry {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  public Entry (String id, EntryType type, LocalDateTime time, String desc, long amountCents) {
-    this.id = id;
-    this.type =type;
-    this.desc = desc;
-    this.time = time;
-    this.amountCents = amountCents;
-  }
+    private String desc;
 
-  public EntryType getTypeEnum() {
-    return type;
-  }
+    @NotNull(message = "Must have amount declared")
+    private Long amountCents;
 
-  public String getDesc() {
-    return desc;
-  }
+    private LocalDateTime time;
 
-  public String getUUID() {
-    return id;
-  }
+    private EntryType type;
 
-  public LocalDateTime getTime() {
-    return time;
-  }
+    public Entry(EntryType type, LocalDateTime time, String desc, Long amountCents) {
+        this.type = type;
+        this.desc = desc;
+        this.amountCents = amountCents;
+    }
 
-  public long getCents() {
-    return amountCents;
-  }
+    public EntryType getTypeEnum() {
+        return type;
+    }
+    public void setTypeEnum(EntryType type) {
+        this.type = type;
+    }
 
-  public String getAmount() {
-    long abs = Math.abs(amountCents);
-    return "$" + (amountCents / 100) + "." + (String.format("%02d", abs % 100));
-  }
+    public String getDesc() {
+        return desc;
+    }
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
-  public String getType() {
-    return type == EntryType.INCOME ? "INCOME" : "EXPENSE";
-  }
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        this.time = LocalDateTime.now();
+    }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
+
+    public Long getCents() {
+        return amountCents;
+    }
+    public void setCents(Long cents) {
+        this.amountCents = cents;
+    }
+
+    public abstract Long addToTotal(Long total);
+
+    public String getAmount() {
+        long abs = Math.abs(amountCents);
+        return "$" + (amountCents / 100) + "." + (String.format("%02d", abs % 100));
+    }
+
+    public String getType() {
+        return type == EntryType.INCOME ? "INCOME" : "EXPENSE";
+    }
 }
 

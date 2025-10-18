@@ -1,51 +1,34 @@
 package com.financeapi.centdash.web;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.*;
+import com.financeapi.centdash.repository.BudgetRepository;
 
-import com.financeapi.centdash.core.BudgetService;
 import com.financeapi.centdash.domain.Budget;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.ResponseEntity;
-import java.net.URI;
 
-import java.time.LocalDateTime;
-import java.util.HashMap;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/budgets")
 public class BudgetController {
-  private final BudgetService budget;
-  public BudgetController(BudgetService budget) {
-    this.budget = budget;
-  }
 
-  @GetMapping("/budgets")
-  public HashMap<String, Budget> list() {
-    return budget.list();
-  }
+    @Autowired
+    private BudgetRepository budgetRepository;
 
 
-  record CreateBudget(
-      @NotBlank(message = "Description can't be blank")
-      @Size(min = 1, max = 255, message = "Description must be between 1 and 255 characters")
-      String desc,
-      @Min(value = 0, message = "Current amount must be positive")
-      long current,
-      @Min(value = 0, message = "Max amount must be positive")
-      long max
-  ) {
+    @GetMapping
+    public List<Budget> listAllBudgets() {
+        return budgetRepository.findAll();
+    }
 
-  }
 
-  @PostMapping("/budgets")
-  public ResponseEntity<Budget> create(@Valid @RequestBody CreateBudget req) {
-    Budget newBudget = budget.addBudget(java.util.UUID.randomUUID().toString(), req.desc(), req.current(), req.max(), LocalDateTime.now());
 
-    return ResponseEntity.created(URI.create("/api/budgets/" + newBudget.getUUID()))
-      .body(newBudget);
-  }
+    @PostMapping
+    public ResponseEntity<Budget> create(@RequestBody Budget budget) {
+       return ResponseEntity.status(HttpStatus.CREATED).body(budgetRepository.save(budget));
+    }
 
 }
