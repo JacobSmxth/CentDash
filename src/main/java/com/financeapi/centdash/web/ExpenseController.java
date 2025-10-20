@@ -3,7 +3,9 @@ package com.financeapi.centdash.web;
 
 import com.financeapi.centdash.domain.Expense;
 import com.financeapi.centdash.repository.EntryRepository;
+import com.financeapi.centdash.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,9 @@ public class ExpenseController {
     @Autowired
     private EntryRepository entryRepository;
 
+    @Autowired
+    private ExpenseService expenseService;
+
     @GetMapping
     public List<Expense> getExpenses() {
         return entryRepository.findAllExpenses();
@@ -23,6 +28,6 @@ public class ExpenseController {
 
     @PostMapping
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
-        return ResponseEntity.ok(entryRepository.save(expense));
+        return ResponseEntity.status(HttpStatus.CREATED).body(expenseService.createExpense(expense));
     }
 }
