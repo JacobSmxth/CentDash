@@ -28,11 +28,6 @@ public class LedgerController {
     @Autowired
     private EntryRepository entryRepository;
 
-    @GetMapping("/health")
-    public String health() {
-        return "ledger ok";
-    }
-
     @GetMapping
     public List<Entry> listAllEntries() {
         return entryRepository.findAll();
