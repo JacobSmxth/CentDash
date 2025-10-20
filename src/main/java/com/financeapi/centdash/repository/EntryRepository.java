@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface EntryRepository extends JpaRepository<Entry, Long> {
     @Query("SELECT e FROM Entry e WHERE TYPE(e) = Income")
-    List<Income> findAllIncome();
+    List<Income> findAllIncomes();
 
     @Query("SELECT e FROM Entry e WHERE TYPE(e) = Expense")
-    List<Expense> findAllExpense();
+    List<Expense> findAllExpenses();
 }

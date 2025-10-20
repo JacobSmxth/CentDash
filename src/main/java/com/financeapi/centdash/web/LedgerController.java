@@ -38,29 +38,20 @@ public class LedgerController {
         return entryRepository.findAll();
 
     }
-    @GetMapping("/incomes")
-    public List<Income> listAllIncome() {
-        return entryRepository.findAllIncome();
-    }
-
-    @GetMapping("/expenses")
-    public List<Expense> listAllExpense() {
-        return entryRepository.findAllExpense();
-    }
 
     @GetMapping("/net-total")
     public ResponseEntity<HashMap<String, Object>> getNetTotal() {
         HashMap<String, Object> information = new HashMap<>();
 
 
-        Long incomeTotal = entryRepository.findAllIncome().stream()
+        Long incomeTotal = entryRepository.findAllIncomes().stream()
                 .mapToLong(Income::getCents)
                 .sum();
-        Long expenseTotal = entryRepository.findAllExpense().stream()
+        Long expenseTotal = entryRepository.findAllExpenses().stream()
                 .mapToLong(Expense::getCents)
                 .sum();
 
-        Long netTotal = incomeTotal - expenseTotal;
+        long netTotal = incomeTotal - expenseTotal;
 
 
         long dollars = netTotal / 100;
@@ -74,16 +65,6 @@ public class LedgerController {
         information.put("formattedTotal", formattedTotal);
 
         return ResponseEntity.ok(information);
-    }
-
-    @PostMapping("/incomes")
-    public ResponseEntity<Entry> createIncome(@RequestBody Income income) {
-        return ResponseEntity.ok(entryRepository.save(income));
-    }
-
-    @PostMapping("/expenses")
-    public ResponseEntity<Entry> createExpense(@RequestBody Expense expense) {
-        return ResponseEntity.ok(entryRepository.save(expense));
     }
 
 }
