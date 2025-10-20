@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95917219-6fa4-4332-9b6c-7b998623064d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/IncomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/thedata.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/thedata.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/BudgetCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/domain/EntryType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/repository/EntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/repository/EntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/financeapi/centdash/web/HealthController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
