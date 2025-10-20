@@ -1,7 +1,6 @@
 package com.financeapi.centdash.repository;
 
 import com.financeapi.centdash.domain.Entry;
-import com.financeapi.centdash.domain.EntryType;
 import com.financeapi.centdash.domain.Expense;
 import com.financeapi.centdash.domain.Income;
 import org.springframework.data.jpa.repository.JpaRepository;
